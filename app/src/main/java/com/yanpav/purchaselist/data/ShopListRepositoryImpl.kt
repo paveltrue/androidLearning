@@ -6,6 +6,13 @@ import java.lang.RuntimeException
 
 object ShopListRepositoryImpl : ShopListRepository {
 
+    init {
+        for (i in 0 until 10) {
+            val item = ShopItem("Name $i", i, true)
+            addShopItem(item)
+        }
+    }
+
     private val shopList = mutableListOf<ShopItem>()
     private var autoIncrementId = 0
 
